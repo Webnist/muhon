@@ -26,20 +26,18 @@ gulp.task('js', function() {
 gulp.task('css', function() {
   gulp.src('_sass/*.scss')
     .pipe($.compass({
-      sass: '_sass',
-      css: 'css',
-      image: 'images',
-      style: 'expanded',
-      relative: true,
+      sass:      '_sass',
+      css:       'css',
+      image:     'images',
+      style:     'expanded',
+      relative:  true,
+      comments:  false,
       sourcemap: true
     }))
-    .pipe(gulp.dest('./'))
-
-  gulp.src('css/{%= file_name %}.css')
     .pipe($.rename('style.css'))
     .pipe($.csscomb())
     .pipe($.cssbeautify({
-      indent: ' '
+      indent: '	'
     }))
     .pipe(gulp.dest(''))
 });

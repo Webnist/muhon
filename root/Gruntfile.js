@@ -49,6 +49,7 @@ module.exports = function( grunt ) {
                     outputStyle:    'expanded',
                     imagesDir:      'images',
                     relativeAssets: true,
+                    noLineComments: true,
                     sourcemap:      true
                 }
             }
