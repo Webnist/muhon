@@ -27,7 +27,7 @@ exports.template = function( grunt, init, done ) {
         {
             name   : 'prefix',
             message: 'PHP function prefix',
-            default: 'garyu'
+            default: 'muhon'
         },
         init.prompt( 'description', 'Muhon base theme' ),
         init.prompt( 'homepage', 'https://www.digitalcube.jp/' ),
