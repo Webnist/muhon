@@ -1,0 +1,4 @@
+{
+  "js/muhon.js": "js/{%= prefix %}.js",
+  "_sass/muhon.scss": "_sass/{%= prefix %}.scss"
+}

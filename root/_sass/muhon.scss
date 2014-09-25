@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@import "variable";
+@import "compass";
+@import "mixins";
+/*
+Theme Name: {%= title %}
+Theme URI: {%= homepage %}
+Author: {%= author_name %}
+Author URI: {%= author_url %}
+Description: {%= description %}
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: {%= prefix %}
+Domain Path: /languages/
+Tags:
+*/
+
+//import normalize
+@import url("normalize.min.css");
+/* Bass */
+
+/* link color
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Layout
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Header
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Common
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* HOME
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Archive
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Single
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Page
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Footer
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Other
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+//Write style start
+
+//Write style end
+//import entry-contents style (styledocco)
+@import "entry-contents";
+//import widget style (styledocco)
+@import "widget";
+//What WordPress?
+@import "wordpress";
+@import "extend";
