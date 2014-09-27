@@ -61,6 +61,10 @@ gulp.task('package', function() {
     .pipe($.replace(/style.css/g, 'css/{%= file_name %}.min.css'))
     .pipe(gulp.dest('./inc'))
 
+  gulp.src('style.css')
+    .pipe($.replace(/^\*\/((\n.*)*)/igm, '*/'))
+    .pipe(gulp.dest('./'))
+
 });
 
 // Only Master branch

@@ -11,7 +11,6 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<?php wp_head(); ?>
 	</head>
@@ -20,6 +19,7 @@
 		<div id="page" class="hfeed site">
 			<?php do_action( '{%= prefix %}_before_page' ); ?>
 			<header id="masthead" class="site-header" role="banner">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php do_action( '{%= prefix %}_header' ); ?>
 			</header><!-- #masthead -->
 			<?php do_action( '{%= prefix %}_header_content' ); ?>

@@ -13,8 +13,8 @@ function {%= prefix %}_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sideber', '{%= prefix %}' ),
 		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );

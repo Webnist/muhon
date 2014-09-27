@@ -6,14 +6,16 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php do_action( '{%= prefix %}_before_single_entry' ); ?>
 	<header class="entry-header">
+		<?php do_action( '{%= prefix %}_before_single_entry_header' ); ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<?php do_action( '{%= prefix %}_single_entry_header' ); ?>
+		<?php do_action( '{%= prefix %}_after_single_entry_header' ); ?>
 	</header><!-- .entry-header -->
-	<div class="entry-content">
+	<section class="entry-content">
+		<?php do_action( '{%= prefix %}_before_single_entry_content' ); ?>
 		<?php the_content(); ?>
 		<?php wp_link_pages(); ?>
-		<?php do_action( '{%= prefix %}_single_entry_content' ); ?>
-	</div><!-- .entry-content -->
+		<?php do_action( '{%= prefix %}_after_single_entry_content' ); ?>
+	</section><!-- .entry-content -->
 	<?php if ( has_action( '{%= prefix %}_single_entry_footer' ) ) : ?>
 		<footer class="entry-footer">
 			<?php do_action( '{%= prefix %}_single_entry_footer' ); ?>

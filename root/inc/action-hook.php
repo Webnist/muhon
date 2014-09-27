@@ -13,7 +13,6 @@
  * 4. {%= prefix %}_header
  * 5. {%= prefix %}_header_content
  * 6. {%= prefix %}_before_content
- * 7. {%= prefix %}_before_primary
  * 8. {%= prefix %}_before_main
  * 9. {%= prefix %}_before_archive_entry
  * 10. {%= prefix %}_archive_entry_header
@@ -41,7 +40,6 @@
  * 32. {%= prefix %}_404_footer
  * 33. {%= prefix %}_after_404
  * 34. {%= prefix %}_after_main
- * 35. {%= prefix %}_after_primary
  * 36. {%= prefix %}_secondary
  * 37. {%= prefix %}_after_content
  * 38. {%= prefix %}_content_footer
