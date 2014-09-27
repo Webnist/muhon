@@ -78,6 +78,7 @@ exports.template = function( grunt, init, done ) {
 
         // Development prefix (i.e. to prefix PHP function names, variables)
         props.prefix = props.prefix.replace('/[^a-z_]/i', '').toLowerCase();
+        //props.prefix = props.prefix.replace(/-/g, '_').toLowerCase();
 
         // Development prefix in all caps (e.g. for constants)
         props.prefix_caps = props.prefix.toUpperCase();

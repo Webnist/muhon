@@ -89,19 +89,47 @@ module.exports = function( grunt ) {
             }
         },
 
-        // watch
-        watch: {
-            options: {
-                livereload: true,
-                nospawn: true
+        replace: {
+            dev    : {
+                src: ['style.css'],
+                dest: 'style.css',
+                replacements: [{
+                    from: '../',
+                    to: ''
+                }, {
+                    from: '{%= file_name %}.css.map',
+                    to: 'css/{%= file_name %}.css.map'
+                }]
             },
-            js: {
-                files: ['js/*.js'],
-                tasks: [ 'jshint' ]
+            package: {
+                src: ['inc/manage_scripts_styles.php'],
+                dest: 'inc/manage_scripts_styles.php',
+                replacements: [{
+                    from: '{%= file_name %}.js',
+                    to: '{%= file_name %}.min.js'
+                }, {
+                    from: 'style.css',
+                    to: 'css/{%= file_name %}.min.css'
+                }]
             },
-            compass: {
-                files: ['_sass/*.scss'],
-                tasks: ['compass', 'csscomb', 'wpcss']
+            style: {
+                src: ['style.css'],
+                dest: 'style.css',
+                replacements: [{
+                    from: /^\*\/((\n.*)*)/igm,
+                    to: '*/'
+                }]
+            }
+        },
+
+        image: {
+            dynamic: {
+                files: [{
+                expand: true,
+                cwd: 'images/',
+                src: ['**/*.{png,jpg,gif,svg}'],
+                dest: 'images/'
+                }]
             }
         },
 
@@ -116,28 +144,19 @@ module.exports = function( grunt ) {
             }
         },
 
-        replace: {
-            package: {
-                src: ['inc/manage_scripts_styles.php'],
-                dest: 'inc/manage_scripts_styles.php',
-                replacements: [{
-                    from: '{%= file_name %}.js',
-                    to: '{%= file_name %}.min.js'
-                }, {
-                    from: 'style.css',
-                    to: 'css/{%= file_name %}.min.css'
-                }]
-            }
-        },
-
-        image: {
-            dynamic: {
-                files: [{
-                expand: true,
-                cwd: 'images/',
-                src: ['**/*.{png,jpg,gif,svg}'],
-                dest: 'images/'
-                }]
+        // watch
+        watch: {
+            options: {
+                livereload: true,
+                nospawn: true
+            },
+            js: {
+                files: ['js/*.js'],
+                tasks: [ 'jshint' ]
+            },
+            compass: {
+                files: ['_sass/*.scss'],
+                tasks: ['compass', 'csscomb', 'wpcss', 'replace:dev']
             }
         }
 
@@ -148,7 +167,7 @@ module.exports = function( grunt ) {
     // Default task.
     grunt.registerTask(
         'default',
-        ['jshint', 'compass', 'csscomb', 'wpcss']
+        ['jshint', 'compass', 'csscomb', 'wpcss', 'replace:dev']
     );
 
     // i18n
@@ -160,7 +179,7 @@ module.exports = function( grunt ) {
     // Package task.
     grunt.registerTask(
         'package',
-        ['uglify', 'cssmin', 'replace']
+        ['uglify', 'cssmin', 'replace:package', 'replace:style']
     );
 
     grunt.util.linefeed = '\n';

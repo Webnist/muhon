@@ -39,6 +39,8 @@ gulp.task('css', function() {
     .pipe($.cssbeautify({
       indent: '	'
     }))
+    .pipe($.replace('../', ''))
+    .pipe($.replace(/sourceMappingURL={%= file_name %}.css.map/g, 'sourceMappingURL=css/{%= file_name %}.css.map'))
     .pipe(gulp.dest(''))
 });
 
